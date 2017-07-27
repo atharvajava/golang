@@ -13,7 +13,7 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
     title := r.URL.Path[len("/view/"):]
 // The Path is re-sliced with [len("/view/"):] to drop the leading "/view/" component of the request path. 
 //This is because the path will invariably begin with "/view/", which is not part of the page's title.
-    p, _ := loadPage(title)
+    p, _ := loadPage("test.txt")
 	//The function then loads the page data, formats the page with a string of simple HTML, and writes it 
 	//to w, the http.ResponseWriter.
 	//Again, note the use of _ to ignore the error return value from loadPage. This is done here for simplicity
